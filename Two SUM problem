@@ -1,0 +1,19 @@
+//Hashmap approch for two sum problem.
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int result[]= new int[2];
+        
+        HashMap<Integer,Integer> num_map= new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            int rem=target - nums[i];
+        if(num_map.containsKey(rem)){
+            result[0]=num_map.get(rem);
+            result[1]=i;
+             }
+          else{
+              num_map.put(nums[i],i);
+          }    
+        }
+       return result;
+    }
+}
